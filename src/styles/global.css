@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Poppins';
+  width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
+main {
+  overflow-x: hidden !important;
+}
+
+.section {
+  max-width: 90%;
+  margin: 0px auto;
+}
+
+#crossFade {
+  position: absolute;
+  width: 100%;
+  margin: 0 auto;
+  bottom: -25%;
+}
+
+.dish-info {
+  animation: 400ms ease-out 0s 1 grow;
+  transform-origin: left top;
+}
+
+.dish-button {
+  animation: 400ms ease-out 0s 1 grow;
+  transform-origin: left top;
+}
+
+@media only screen and (max-width: 1280px) {
+  .dish-info {
+    transform-origin: center top;
+  }
+  
+  .dish-button {
+    transform-origin: center top;
+  }
+}
+
+@keyframes squeeze {
+  0% {
+    height: 100%;
+  }
+  25% {
+    height: 75%;
+  }
+  50% {
+    height: 50%;
+  }
+  75% {
+    height: 75%;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0.25);
+  }
+  25% {
+    transform: scale(0.5);
+  }
+  75% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#crossFade .gatsby-image-wrapper {
+  transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
+}
