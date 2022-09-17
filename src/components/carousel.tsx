@@ -165,7 +165,7 @@ const Carousel = () => {
                       image={image}
                       key={index}
                       alt={dishes[number].name}
-                      style={{ top: `${slidesPositions[index].top}`, left: `${slidesPositions[index].left}` }}
+                      style={{ position: "absolute", top: `${slidesPositions[index].top}`, left: `${slidesPositions[index].left}` }}
                       className={`-translate-x-[50%] -translate-y-[50%] w-[100px] absolute`}
                     />
                   );
@@ -185,6 +185,7 @@ const Carousel = () => {
                       image={getDishImage(dish.id, data)}
                       alt='current dish'
                       style={{
+                        position: "absolute",
                         opacity: dish.id !== dishes[slidesIndexes[foodSpinActiveDish]].id ? '0' : '1',
                         transform: `translateX(-50%) ${
                           dish.id !== dishes[slidesIndexes[foodSpinActiveDish]].id ? 'rotate(0deg) scale(0.6)' : 'rotate(45deg) scale(1)'
